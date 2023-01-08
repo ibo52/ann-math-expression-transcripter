@@ -28,9 +28,11 @@ Program provides best accuracy on digitally handwritten images. On manually hand
 ---
 ## digitally handwritten images
 ### we estimate best predictions on digitally written images since these are constant contrast as black writings over white canvas
-![digitally handwritten1](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/out6-digital.png)
-![digitally handwritten2](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/out5-digital.png)
-![digitally handwritten3](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/out3.png)
+![digitally handwritten1](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/out6-digital.png)
+
+![digitally handwritten2](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/out5-digital.png)
+
+![digitally handwritten3](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/out3.png)
 
 ## manually handwritten images
 ### some symbols may not predict proper due to bad lightning(number 9 predicted as 3; / predicted as 1 because rotation augmentation on early implementations)
@@ -39,7 +41,7 @@ Program provides best accuracy on digitally handwritten images. On manually hand
 ![manually handwritten2](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/contrast%20issues.png)
 
 ## laptop camera real time prediction
-### mostly accurate results, but repid broke on prediction due to lightning issues
+### mostly accurate results, but rapid broke on prediction due to lightning issues
 ![camera realtime](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/manual5.png)
 
 ![camera realtime](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/manual6.png)
