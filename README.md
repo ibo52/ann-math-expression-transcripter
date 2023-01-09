@@ -47,3 +47,6 @@ Program provides best accuracy on digitally handwritten images. On manually hand
 ![camera realtime](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/manual6.png)
 
 ![camera realtime](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/manual4.png)
+
+###watch video
+![camera realtime](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/Kazam_screencast_00001.webm)
