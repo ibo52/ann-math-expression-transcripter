@@ -3,7 +3,8 @@ CNN model to predict simple mathematical expressions.
 ---
 Program provides best accuracy on digitally handwritten images. On manually handwritten images, there should be jet-black, sharp writings over white paper. __on a stable lightning environment__. If environment had bad lightning, Contouring process will be broke and can not extract possible symbols area properly, which will cause meaningless predictions.
 ---
-## Running
+# Running
+  - ___Run 'sh reqs_python.sh' to install required libraries first. Or else program will not work due to library dependency issues.___
   - I uploaded the trained model, so you can see results yourself by downloading this page source.
   - Run `test_main.py` file to see results of my digitally written image samples. It will show predictions on screen.
   - Run `camera_main.py` to test your real-time inputs. Use __black and thick__ writings on your paper. Also you can see my sample video for this process -> ![laptop camera realtime prediction](https://github.com/ibo52/ann-math-expression-transcripter/blob/main/realtime%20test%20outputs/Kazam_screencast_00001.webm)
