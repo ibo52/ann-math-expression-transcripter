@@ -5,11 +5,18 @@ from keras.models import load_model
 import numpy as np
 import imutils
 from imutils.contours import sort_contours
-
+try:
+    from labels import labels_#labels of model
+except Exception as e:
+    print(e)
+    print("train-model.py generates this file")
+    print("you have to run train-model")
+    print("or give labels for classes manually" )
+    
 img_rows, img_cols =64, 64
 
 model =  load_model('transCripterModel.h5')
-labels=["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+","/","(","*",")","-"]
+labels=labels_
 
 MODEL_INPUT_SIZE= img_rows, img_cols
 
@@ -68,16 +75,7 @@ def digitize_math_expression(frame, model):
     contours = sort_contours(contours, method="left-to-right")[0][:16]
 
     text=''#deciphered math expression
-    L=contours
-    for c in contours:
-        for k in contours:
-            (x1,y1,w1,h1)=cv2.boundingRect(k)
-            (x2,y2,w2,h2)=cv2.boundingRect(c)
 
-            if(x1>=x2 and y1>=y2) and (x1+w1<=x2+w2 and y1+h1<=y2+h2):
-                L.remove(k)
-            
-    contours=L  
     for c in contours:
         #founded symbols area
         (x, y, w, h) = cv2.boundingRect(c)
@@ -135,15 +133,15 @@ def digitize_math_expression(frame, model):
             roi=np.reshape(roi, shape4D)
             
             #predict symbol
-            val=model.predict(roi,verbose=0)
+            val=model.predict(roi,verbose=0).argmax()
             """
             print("prediction:", labels[val.argmax()])
             
             input("devam: ")
             """
-            text=text+labels[val.argmax()]
+            text=text+labels[val]
             cv2.rectangle(img, (x, y), (x+w, y+h), (0, 0, 255), 2)#to show area over main image
-            #cv2.putText(img, labels[val.argmax()] , (x-5, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255))
+            cv2.putText(img, labels[val] , (x-5, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255),2)
 
     print("predicted :",text,end="=")
     try:
